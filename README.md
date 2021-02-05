@@ -31,6 +31,20 @@ pi@raspberrypi:~ $ sudo perl -pi -e 's/#{1,}?net.ipv4.ip_forward ?= ?(0|1)/net.i
 pi@raspberrypi:~ $ sudo reboot
 ```
 
+**Note**
+
+If you have the following problems:
+```
+root@livingroom:~/wg_config# sudo wg-quick up wg0
+[#] ip link add wg0 type wireguard
+RTNETLINK answers: Operation not supported
+Unable to access interface: Protocol not supported
+[#] ip link delete dev wg0
+Cannot find device "wg0"
+root@livingroom:~/wg_config#
+```
+[Here is the solution!!](https://github.com/adrianmihalko/raspberrypiwireguard/issues/11#issuecomment-637163236)
+
 To check if it has been enabled:
 
 ```console
